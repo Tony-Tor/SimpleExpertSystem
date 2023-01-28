@@ -34,6 +34,7 @@ public class HelloController implements Initializable {
     @FXML private Label deviation;
     @FXML private Label sales;
     @FXML private Label reliability;
+    @FXML private Label prog;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +53,8 @@ public class HelloController implements Initializable {
         analysis.setText("" + (item.isTruePeriod()?"Верный":"Неверный"));
         sales.setText("" + (item.isStable()?"Стабильные":"Нестабильные"));
         reliability.setText("" + item.getReliability());
+        prog.setText("" + (item.getAverage() + item.getDeviation()));
+
 
         pricesTable.getItems().setAll(item.dataPriceList);
 
